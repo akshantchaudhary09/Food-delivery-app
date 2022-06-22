@@ -100,7 +100,7 @@ initStripe()
 // Socket
 let socket = io()
 
-// Join
+// Join 
 if(order) {
     socket.emit('join', `order_${order._id}`)
 }

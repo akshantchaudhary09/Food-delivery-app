@@ -28211,7 +28211,7 @@ function updateStatus(order) {
 updateStatus(order);
 Object(_stripe__WEBPACK_IMPORTED_MODULE_4__["initStripe"])(); // Socket
 
-var socket = io(); // Join
+var socket = io(); // Join 
 
 if (order) {
   socket.emit('join', "order_".concat(order._id));
@@ -28290,7 +28290,7 @@ function _initStripe() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return Object(_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__["loadStripe"])('pk_test_51Hf6vbDfWW6uHRy7b6Upoa4bWhGYmk2ElEN4AiFeqozzlccU6OpAoD9d1oIar3qg9i8ASiOs9ly4rFJQOTPM5MMk00GN7COA2N');
+            return Object(_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__["loadStripe"])('pk_test_51LD9DgSESktSr8l08Lox6BpEmqOgF3vACuqAeHw3VkmY6v2wUEyzeTG8EqI96JW8dmhqj7n8fBxlQ89yinm0MDG200gZtW9IKg');
 
           case 2:
             stripe = _context2.sent;
@@ -28377,6 +28377,7 @@ function _initStripe() {
 
                         case 10:
                           token = _context.sent;
+                          console.log(token);
                           formObject.stripeToken = token.id;
                           Object(_apiService__WEBPACK_IMPORTED_MODULE_2__["placeOrder"])(formObject); // // Verify card
                           // stripe.createToken(card).then((result) => {
@@ -28386,7 +28387,7 @@ function _initStripe() {
                           //     console.log(err)
                           // })
 
-                        case 13:
+                        case 14:
                         case "end":
                           return _context.stop();
                       }

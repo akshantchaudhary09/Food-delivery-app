@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtime pizza app</title>
+    <title>Realtime Burger app</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet"
@@ -15,14 +15,19 @@
 <body>
     <nav class="container mx-auto flex items-center justify-between py-4">
         <div>
-            <a href="/"><img src="/img/logo.png" alt="logo"></a>
+            <a href="/" style="display:flex"><img src="/img/burger-logo.png" alt="logo"><p style="font-weight: bolder; padding-top: 12px;padding-left: 4px; font-size: larger;">Burger</p></a>
         </div>
         <div>
             <ul class="flex items-center">
                 <li class="ml-6"><a href="/">Menu</a></li>
                 <li class="ml-6"><a href="/reviews">Review</a></li>
+               
                 <% if(user) { %>
-                <li class="ml-6"><a href="/customer/orders">Orders</a></li>
+                    <% if(user.role=='customer') { %>
+                        <li class="ml-6"><a href="/customer/orders">Orders</a></li>
+                    <% } else { %>
+                        <li class="ml-6"><a href="/admin/orders">Orders</a></li>
+                    <% } %>
                 <li class="ml-6">
                     <form id="logout" action="/logout" method="POST">
                         <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>

@@ -35,8 +35,8 @@ app.set('eventEmitter', eventEmitter)
 
 // Session config
 app.use(session({
-    // secret: process.env.COOKIE_SECRET,
-    secret: "thisismysecret",
+    secret: process.env.COOKIE_SECRET,
+    // secret: "thisismysecret",
     resave: false,
     store: mongoStore,
     saveUninitialized: false,
@@ -59,6 +59,7 @@ app.use(express.json())
 app.use((req, res, next) => {
     res.locals.session = req.session
     res.locals.user = req.user
+    // console.log(req);
     next()
 })
 // set Template engine
@@ -66,15 +67,17 @@ app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
 
+
+
 require('./routes/web')(app)
 app.use((req, res) => {
     res.status(404).render('errors/404')
 })
-
+ 
 const server = app.listen(PORT , () => {
             console.log(`Listening on port ${PORT}`)
         })
-
+ 
 // Socket
 
 const io = require('socket.io')(server)

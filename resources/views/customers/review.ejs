@@ -3,19 +3,29 @@
     <div class="order container mx-auto xl:w-1/2">
         <div class="flex items-center border-b border-gray-300 pb-4">
             <!-- <img src="/img/cart-black.png" alt=""> -->
-            <h1 class="font-bold ml-4 text-2xl">Reviews</h1>
+            <h1 class="font-bold ml-4 text-3xl">Customers Review</h1>
         </div>
         <div class="pizza-list overflow-auto" style="height: 40vh;">
+                <br>
                 <% for(let i=0;i<reviews.length;i++) { %>
-                    <div class="flex-1 ml-4 font-bold text-lg">
-                        <h1><%= reviews[i].customerId.name %></h1>
+                    <div style="display:flex;">
+                        <h1 class="flex-1 ml-4 font-bold text-2xl"><%= reviews[i].customerId.name %></h1>
+                        <div style="border: 5px;border-radius: 15px;background-color: gainsboro;" class="flex-2 ml-4 font-bold text-sm" >
+                            <p style="margin: 4px 6px;" ><%= reviews[i].createdAt.toString().split("G")[0] %></p>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;
+                        <p ><% if(reviews[i].isNegative == "false") { %>
+                            <img src="/img/check-mark.png" alt="check-logo">
+                            <% } else { %>
+                                <img src="/img/close.png" alt="close-logo">
+                            <% } %>
+                        </p>
                     </div>
-                    <p><%= reviews[i].content %></p>
-                    <p><%= reviews[i].createdAt.toString().split("T")[0] %></p>
-                    <p><%= reviews[i].isNegative %></p>
+                    <p class="flex-1 ml-4 text-xl"><%= reviews[i].content %></p>
                     <% if(user && user._id.toString() === reviews[i].customerId.toString()) { %>
                         <button id="del-review" onclick="deleteReview('<%= reviews[i]._id.toString() %>')" class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Delete</button>
                     <% } %>
+                    <p style="text-align: center;">--------------------</p>
                 <% } %>
                   
         </div>
