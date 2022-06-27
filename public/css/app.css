@@ -310,7 +310,7 @@ body {
 }
 
 nav li:last-child a {
-  background: #FE5F1E;
+  background: #10ca2b;
 }
 
 nav li:last-child a:hover {
@@ -322,7 +322,7 @@ nav li a {
 }
 
 nav li a:hover {
-  color: #FE5F1E;
+  color: #10ca2b;
 }
 
 section.hero {
@@ -334,13 +334,13 @@ section.hero {
 }
 
 .add-to-cart {
-  border: 2px solid #FE5F1E;
-  color: #FE5F1E;
+  border: 2px solid #10ca2b;
+  color: #10ca2b;
   transition: all 0.3s ease-in-out;
 }
 
 .add-to-cart:hover {
-  background: #FE5F1E;
+  background: #10ca2b;
   border-color: #fff;
   color: #fff;
 }
@@ -350,7 +350,7 @@ section.hero {
 }
 
 .btn-primary {
-  background: #FE5F1E;
+  background: #10ca2b;
   transition: all 0.3s ease-in-out;
 }
 
@@ -363,7 +363,7 @@ section.cart {
 }
 
 section.cart .amount {
-  color: #FE5F1E;
+  color: #10ca2b;
 }
 
 section.login {
@@ -372,7 +372,7 @@ section.login {
 }
 
 section.login a {
-  color: #FE5F1E;
+  color: #10ca2b;
 }
 
 section.login a:hover {
@@ -385,7 +385,7 @@ section.login a:hover {
 }
 
 a.link {
-  color: #FE5F1E;
+  color: #10ca2b;
 }
 
 section.status {
@@ -482,11 +482,11 @@ section.status {
 }
 
 .status-box ul li.current span {
-  color: #FE5F1E;
+  color: #10ca2b;
 }
 
 .status-box ul li.current span:after {
-  background: #FE5F1E;
+  background: #10ca2b;
 }
 
 .status-box ul li small {
