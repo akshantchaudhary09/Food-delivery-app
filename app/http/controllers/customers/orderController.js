@@ -22,9 +22,9 @@ function orderController () {
 
                     // Stripe payment
                     if(paymentType === 'card') {
-                        stripe.charges.create({
+                        stripe.paymentIntents.create({
                             amount: req.session.cart.totalPrice  * 100,
-                            source: stripeToken,
+                            // source: stripeToken,
                             currency: 'inr',
                             description: `Pizza order: ${placedOrder._id}`
                         }).then(() => {
